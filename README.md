@@ -22,3 +22,5 @@ yarn run build
 
 php bin/console server:run
 ```
+
+Default user credentials: admin@admin.test / admin
