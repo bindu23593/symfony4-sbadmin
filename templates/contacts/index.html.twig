@@ -1,0 +1,62 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Contacts index{% endblock %}
+
+{% block content %}
+
+    <!-- Page Heading -->
+        <h1 class="h3 mb-2 text-gray-800">Contacts</h1>
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <a class="btn btn-primary btn-sm float-right" href="{{ path('app_contacts_new') }}">Create new</a>
+                <h6 class="m-0 font-weight-bold text-primary">Contacts List</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Message</th>
+                                <th>actions</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Message</th>
+                                <th>actions</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            {% for contact in contacts %}
+                                <tr>
+                                    <td>{{ contact.id }}</td>
+                                    <td>{{ contact.name }}</td>
+                                    <td>{{ contact.email }}</td>
+                                    <td>{{ contact.phone }}</td>
+                                    <td>{{ contact.message }}</td>
+                                    <td>
+                                        <a href="{{ path('app_contacts_show', {'id': contact.id}) }}">show</a>
+                                        <a href="{{ path('app_contacts_edit', {'id': contact.id}) }}">edit</a>
+                                    </td>
+                                </tr>
+                            {% else %}
+                                <tr>
+                                    <td colspan="6">no records found</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}
