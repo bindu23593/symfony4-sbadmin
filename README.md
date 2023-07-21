@@ -9,6 +9,10 @@ To set up and run the project, follow the commands below:
 ```bash
 git clone https://github.com/bindu23593/symfony4-sbadmin.git
 
+rename file ".env.example" to ".env"
+
+change database connection in .env file
+
 composer install
 
 yarn install
