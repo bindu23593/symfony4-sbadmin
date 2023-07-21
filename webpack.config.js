@@ -4,12 +4,12 @@
 // const HtmlWebpackPlugin = require('html-webpack-plugin');
 // const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-// const isProduction = process.env.NODE_ENV == 'production';
+const isProduction = process.env.NODE_ENV == 'production';
 
 
 // const stylesHandler = isProduction ? MiniCssExtractPlugin.loader : 'style-loader';
 var Encore = require('@symfony/webpack-encore');
-
+Encore.configureRuntimeEnvironment(isProduction);
 Encore
     .setOutputPath('public/build/')
     .setPublicPath('/build')

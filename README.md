@@ -15,6 +15,8 @@ change database connection in .env file
 
 composer install
 
+if yarn is not installed in your system then run command "npm install --global yarn"
+
 yarn install
 
 php bin/console doctrine:database:create
