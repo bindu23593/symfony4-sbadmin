@@ -25,3 +25,9 @@ php bin/console doctrine:schema:update --force
 yarn run build
 
 php bin/console server:run
+
+## Project TestCase
+
+To run project testcase, follow the command below:
+
+php bin/phpunit
